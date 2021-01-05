@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentWelcome">
+
+    <fragment
+        android:id="@+id/fragmentWelcome"
+        android:name="com.example.asystentnauczyciela.View.FragmentWelcome"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_fragmentWelcome_to_fragmentStudentList"
+            app:destination="@id/fragmentStudentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddStudent"
+        android:name="com.example.asystentnauczyciela.View.FragmentAddStudent"
+        android:label="fragment_add_student"
+        tools:layout="@layout/fragment_add_student" >
+        <action
+            android:id="@+id/action_fragmentAddStudent_to_fragmentStudentList"
+            app:destination="@id/fragmentStudentList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentStudentList"
+        android:name="com.example.asystentnauczyciela.View.FragmentStudentList"
+        android:label="fragment_student_list"
+        tools:layout="@layout/fragment_student_list" >
+        <action
+            android:id="@+id/action_fragmentStudentList_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
+        <action
+            android:id="@+id/action_fragmentStudentList_to_fragmentAddStudent"
+            app:destination="@id/fragmentAddStudent" />
+    </fragment>
+</navigation>
