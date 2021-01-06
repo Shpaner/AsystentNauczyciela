@@ -1,17 +1,17 @@
 package com.example.asystentnauczyciela.Model.Repositories
 
 import androidx.lifecycle.LiveData
-import com.example.asystentnauczyciela.Model.Student
-import com.example.asystentnauczyciela.Model.StudentDao
+import com.example.asystentnauczyciela.Model.Entities.Student
+import com.example.asystentnauczyciela.Model.Dao.StudentDao
 
 class StudentRepository(private val studentDao: StudentDao) {
     val readAll: LiveData<MutableList<Student>> = studentDao.getAllStudents()
 
-    suspend fun add(student:Student) {
+    suspend fun add(student: Student) {
         studentDao.insert(student)
     }
 
-    suspend fun delete(student:Student) = studentDao.delete(student)
+    suspend fun delete(student: Student) = studentDao.delete(student)
 
     //TODO
 //    fun getNotParticipants(courseId: Int) : LiveData<MutableList<Student>> {

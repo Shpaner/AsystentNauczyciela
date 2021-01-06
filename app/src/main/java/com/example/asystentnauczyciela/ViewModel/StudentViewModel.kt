@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.asystentnauczyciela.Model.MainDatabase
 import com.example.asystentnauczyciela.Model.Repositories.StudentRepository
-import com.example.asystentnauczyciela.Model.Student
+import com.example.asystentnauczyciela.Model.Entities.Student
 import kotlinx.coroutines.launch
 
 class StudentViewModel(application: Application): AndroidViewModel(application) {
@@ -22,7 +22,7 @@ class StudentViewModel(application: Application): AndroidViewModel(application) 
     fun addStudent(name: String, lastName: String)
     {
         viewModelScope.launch {
-            studentRepository.add(Student(name=name, lastName = lastName, id=0))
+            studentRepository.add(Student(name = name, lastName = lastName, id = 0))
         }
     }
 

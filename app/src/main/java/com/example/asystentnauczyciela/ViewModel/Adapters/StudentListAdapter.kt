@@ -1,19 +1,17 @@
 package com.example.asystentnauczyciela.ViewModel.Adapters
 
-import android.content.ClipData
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.LiveData
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.asystentnauczyciela.Model.Student
+import com.example.asystentnauczyciela.Model.Entities.Student
 import com.example.asystentnauczyciela.Model.ValuesHolder
 import com.example.asystentnauczyciela.R
-import com.example.asystentnauczyciela.ViewModel.StudentViewModel
-import javax.sql.DataSource
+import com.example.asystentnauczyciela.ViewModel.DeleteButtonClickListener
 
 class StudentListAdapter(var studentList: LiveData<MutableList<Student>>,
                          val deleteButtonClickListener: DeleteButtonClickListener
@@ -42,32 +40,20 @@ class StudentListAdapter(var studentList: LiveData<MutableList<Student>>,
 
         editBtn.setOnClickListener{
             //TODO - dodac fragment studenta (gdzie dodajemy kursy itp)
-
-//                view -> view.findNavController().navigate(R.id.action_framgentChooseStudent_to_fragmentChoosenStudent)
-//            DataSource.chosenStudentIndex = position
-//            DataSource.chosenStudentId = studentList.value?.get(position)?.id ?: 0
+            view -> view.findNavController().navigate(R.id.action_fragmentStudentList_to_fragmentSelectedStudent)
+            ValuesHolder.chosenStudentIndex = position
+            ValuesHolder.chosenStudentId = studentList.value?.get(position)?.id ?: 0
         }
 
-        //TODO
         delButton.setOnClickListener{
             ValuesHolder.chosenStudentIndex = position
             ValuesHolder.chosenStudentId = studentList.value?.get(position)?.id ?: 0
 
-            Log.i("", "delete!")
-
             deleteButtonClickListener.onDelBtnClick(position)
-
-//            viewModel.students.value?.get(ValuesHolder.chosenStudentIndex)?.let {
-//                viewModel.deleteStudent(it)
-//            }
         }
     }
 
     override fun getItemCount(): Int {
         return studentList.value?.size?:0
-    }
-
-    interface DeleteButtonClickListener {
-        fun onDelBtnClick(position: Int)
     }
 }

@@ -4,14 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.asystentnauczyciela.Model.Dao.CourseDao
+import com.example.asystentnauczyciela.Model.Dao.StudentDao
+import com.example.asystentnauczyciela.Model.Entities.Course
+import com.example.asystentnauczyciela.Model.Entities.Student
 
 // TODO dopisac reszte klas w entities
 
-@Database(entities = [Student::class], version = 1, exportSchema = false)
+@Database(entities = [Student::class, Course::class], version = 3, exportSchema = false)
 abstract class MainDatabase: RoomDatabase() {
     abstract fun studentDao(): StudentDao
+    abstract fun courseDao(): CourseDao
 //    abstract fun teacherDao(): TeacherDao
-//    abstract fun courseDao(): CourseDao
 //    abstract fun participantDao(): ParticipantDao
 //    abstract fun gradeDao(): GradeDao
 //    abstract fun testDao(): TestDao

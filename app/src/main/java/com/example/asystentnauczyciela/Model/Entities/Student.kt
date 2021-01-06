@@ -1,4 +1,4 @@
-package com.example.asystentnauczyciela.Model
+package com.example.asystentnauczyciela.Model.Entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

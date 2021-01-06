@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_fragmentWelcome_to_fragmentStudentList"
             app:destination="@id/fragmentStudentList" />
+        <action
+            android:id="@+id/action_fragmentWelcome_to_fragmentCourseList"
+            app:destination="@id/fragmentCourseList" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAddStudent"
@@ -34,5 +37,50 @@
         <action
             android:id="@+id/action_fragmentStudentList_to_fragmentAddStudent"
             app:destination="@id/fragmentAddStudent" />
+        <action
+            android:id="@+id/action_fragmentStudentList_to_fragmentSelectedStudent"
+            app:destination="@id/fragmentSelectedStudent" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSelectedStudent"
+        android:name="com.example.asystentnauczyciela.View.FragmentSelectedStudent"
+        android:label="fragment_selected_student"
+        tools:layout="@layout/fragment_selected_student" >
+        <action
+            android:id="@+id/action_fragmentSelectedStudent_to_fragmentStudentList"
+            app:destination="@id/fragmentStudentList" />
+        <action
+            android:id="@+id/action_fragmentSelectedStudent_to_fragmentStudentsCourseList"
+            app:destination="@id/fragmentStudentsCourseList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddCourse"
+        android:name="com.example.asystentnauczyciela.View.FragmentAddCourse"
+        android:label="fragment_add_course"
+        tools:layout="@layout/fragment_add_course" >
+        <action
+            android:id="@+id/action_fragmentAddCourse_to_fragmentCourseList"
+            app:destination="@id/fragmentCourseList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCourseList"
+        android:name="com.example.asystentnauczyciela.View.FragmentCourseList"
+        android:label="fragment_course_list"
+        tools:layout="@layout/fragment_course_list" >
+        <action
+            android:id="@+id/action_fragmentCourseList_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
+        <action
+            android:id="@+id/action_fragmentCourseList_to_fragmentAddCourse"
+            app:destination="@id/fragmentAddCourse" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentStudentsCourseList"
+        android:name="com.example.asystentnauczyciela.View.FragmentStudentsCourseList"
+        android:label="fragment_students_course_list"
+        tools:layout="@layout/fragment_students_course_list" >
+        <action
+            android:id="@+id/action_fragmentStudentsCourseList_to_fragmentSelectedStudent"
+            app:destination="@id/fragmentSelectedStudent" />
     </fragment>
 </navigation>
