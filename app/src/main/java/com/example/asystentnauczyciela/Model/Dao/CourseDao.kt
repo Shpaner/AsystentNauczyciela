@@ -16,9 +16,12 @@ interface CourseDao {
     @Query("select * from course_table")
     fun getAllCourses() : LiveData<MutableList<Course>>
 
+    @Query("select * from course_table where id in (select idCourse from students_course_table where students_course_table.idStudent = :studentId)")
+    fun getStudentsCourses(studentId: Int) : LiveData<MutableList<Course>>
+
+    @Query("select * from course_table where id not in (select idCourse from students_course_table where students_course_table.idStudent = :studentId)")
+    fun getNotStudentsCourses(studentId: Int) : LiveData<MutableList<Course>>
+
 //    @Query("select * from course_table where idTeacher = :id")
 //    fun teachersCourses(id: Int) : LiveData<MutableList<Course>>
-//
-//    @Query("select * from course_table where id in (select idCourse from participant_table where participant_table.idStudent = :studentId)")
-//    fun studentsCourses(studentId: Int) : LiveData<MutableList<Course>>
 }

@@ -32,8 +32,9 @@ class CourseListAdapter(var courseList: LiveData<MutableList<Course>>,
         courseName.text = courseList.value?.get(position)?.name
 
         delButton.setOnClickListener{
-            ValuesHolder.chosenStudentIndex = position
-            ValuesHolder.chosenStudentId = courseList.value?.get(position)?.id ?: 0
+//            ValuesHolder.chosenStudentIndex = position
+//            ValuesHolder.chosenStudentId = courseList.value?.get(position)?.id ?: 0
+            ValuesHolder.chosenCourseId = position
 
             deleteButtonClickListener.onDelBtnClick(position)
         }

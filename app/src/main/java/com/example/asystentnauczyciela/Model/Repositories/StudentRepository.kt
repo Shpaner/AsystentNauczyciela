@@ -13,12 +13,11 @@ class StudentRepository(private val studentDao: StudentDao) {
 
     suspend fun delete(student: Student) = studentDao.delete(student)
 
-    //TODO
-//    fun getNotParticipants(courseId: Int) : LiveData<MutableList<Student>> {
+//    fun getNotStudentscourses(courseId: Int) : LiveData<MutableList<Student>> {
 //        return studentDao.getNotParticipants(courseId)
 //    }
 //
-//    fun getParticipants(courseId: Int) : LiveData<MutableList<Student>> {
+//    fun getStudentsCourses(courseId: Int) : LiveData<MutableList<Student>> {
 //        return studentDao.getParticipants(courseId)
 //    }
 

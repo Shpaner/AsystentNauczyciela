@@ -48,6 +48,7 @@ class FragmentSelectedStudent : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         studentNameTextView.text = viewModel.students.value?.get(ValuesHolder.chosenStudentIndex)?.name + " " + viewModel.students.value?.get(ValuesHolder.chosenStudentIndex)?.lastName
+        ValuesHolder.student = studentNameTextView.text as String
 
         goToStudentsCoursesBtn.setOnClickListener {
                 view -> view.findNavController().navigate(R.id.action_fragmentSelectedStudent_to_fragmentStudentsCourseList)

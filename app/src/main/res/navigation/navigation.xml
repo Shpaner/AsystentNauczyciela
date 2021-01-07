@@ -76,11 +76,23 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentStudentsCourseList"
-        android:name="com.example.asystentnauczyciela.View.FragmentStudentsCourseList"
+        android:name="com.example.asystentnauczyciela.View.FragmentStudentsCoursesList"
         android:label="fragment_students_course_list"
-        tools:layout="@layout/fragment_students_course_list" >
+        tools:layout="@layout/fragment_students_courses_list" >
         <action
             android:id="@+id/action_fragmentStudentsCourseList_to_fragmentSelectedStudent"
             app:destination="@id/fragmentSelectedStudent" />
+        <action
+            android:id="@+id/action_fragmentStudentsCourseList_to_fragmentAvailableCourses"
+            app:destination="@id/fragmentAvailableCourses" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAvailableCourses"
+        android:name="com.example.asystentnauczyciela.View.FragmentAvailableCourses"
+        android:label="fragment_available_courses"
+        tools:layout="@layout/fragment_available_courses" >
+        <action
+            android:id="@+id/action_fragmentAvailableCourses_to_fragmentStudentsCourseList"
+            app:destination="@id/fragmentStudentsCourseList" />
     </fragment>
 </navigation>

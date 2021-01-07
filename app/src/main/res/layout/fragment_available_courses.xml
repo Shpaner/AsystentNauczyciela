@@ -4,17 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.FragmentStudentsCourseList">
-
+    tools:context=".View.FragmentAvailableCourses">
 
     <TextView
-        android:id="@+id/studentsCourseListTitle"
+        android:id="@+id/availableCoursesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="43dp"
-        android:layout_marginBottom="11dp"
-        android:text="LISTA KURSÓW STUDENTA"
-        app:layout_constraintBottom_toTopOf="@+id/studentName"
+        android:text="DOSTĘPNE KURSY DLA STUDENTA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,33 +20,19 @@
         android:id="@+id/studentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="461dp"
-        android:text="Student"
-        app:layout_constraintBottom_toTopOf="@+id/goToAddCourseToStudent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentsCourseListTitle" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/courseListRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="159dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="87dp"
+        android:text="student"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/goToAddCourseToStudent"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/availableCourseRecyclerView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="125dp"
-        android:text="dodaj"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studentName" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
