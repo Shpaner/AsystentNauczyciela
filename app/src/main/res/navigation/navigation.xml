@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_fragmentWelcome_to_fragmentCourseList"
             app:destination="@id/fragmentCourseList" />
+        <action
+            android:id="@+id/action_fragmentWelcome_to_fragmentReport"
+            app:destination="@id/fragmentReport" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAddStudent"
@@ -52,6 +55,9 @@
         <action
             android:id="@+id/action_fragmentSelectedStudent_to_fragmentStudentsCourseList"
             app:destination="@id/fragmentStudentsCourseList" />
+        <action
+            android:id="@+id/action_fragmentSelectedStudent_to_fragmentRemarks"
+            app:destination="@id/fragmentRemarks" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAddCourse"
@@ -85,6 +91,9 @@
         <action
             android:id="@+id/action_fragmentStudentsCourseList_to_fragmentAvailableCourses"
             app:destination="@id/fragmentAvailableCourses" />
+        <action
+            android:id="@+id/action_fragmentStudentsCourseList_to_fragmentStudentsCourseGrades"
+            app:destination="@id/fragmentStudentsCourseGrades" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAvailableCourses"
@@ -94,5 +103,73 @@
         <action
             android:id="@+id/action_fragmentAvailableCourses_to_fragmentStudentsCourseList"
             app:destination="@id/fragmentStudentsCourseList" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentStudentsCourseGrades"
+        android:name="com.example.asystentnauczyciela.View.FragmentGradesList"
+        android:label="fragment_students_course_grades"
+        tools:layout="@layout/fragment_grades_list" >
+        <action
+            android:id="@+id/action_fragmentStudentsCourseGrades_to_fragmentStudentsCourseList"
+            app:destination="@id/fragmentStudentsCourseList" />
+        <action
+            android:id="@+id/action_fragmentStudentsCourseGrades_to_fragmentAddGrade"
+            app:destination="@id/fragmentAddGrade" />
+        <action
+            android:id="@+id/action_fragmentStudentsCourseGrades_to_fragmentGradeView"
+            app:destination="@id/fragmentGradeView" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddGrade"
+        android:name="com.example.asystentnauczyciela.View.FragmentAddGrade"
+        android:label="fragment_add_grade"
+        tools:layout="@layout/fragment_add_grade" >
+        <action
+            android:id="@+id/action_fragmentAddGrade_to_fragmentStudentsCourseGrades"
+            app:destination="@id/fragmentStudentsCourseGrades" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGradeView"
+        android:name="com.example.asystentnauczyciela.View.FragmentGradeView"
+        android:label="fragment_grade_view"
+        tools:layout="@layout/fragment_grade_view" >
+        <action
+            android:id="@+id/action_fragmentGradeView_to_fragmentStudentsCourseGrades"
+            app:destination="@id/fragmentStudentsCourseGrades" />
+        <action
+            android:id="@+id/action_fragmentGradeView_to_fragmentReport"
+            app:destination="@id/fragmentReport" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentReport"
+        android:name="com.example.asystentnauczyciela.View.FragmentReport"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_fragmentReport_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
+        <action
+            android:id="@+id/action_fragmentReport_to_fragmentGradeView"
+            app:destination="@id/fragmentGradeView" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRemarks"
+        android:name="com.example.asystentnauczyciela.View.FragmentRemarks"
+        android:label="fragment_remarks"
+        tools:layout="@layout/fragment_remarks" >
+        <action
+            android:id="@+id/action_fragmentRemarks_to_fragmentSelectedStudent"
+            app:destination="@id/fragmentSelectedStudent" />
+        <action
+            android:id="@+id/action_fragmentRemarks_to_fragmentAddRemark"
+            app:destination="@id/fragmentAddRemark" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddRemark"
+        android:name="com.example.asystentnauczyciela.View.FragmentAddRemark"
+        android:label="FragmentAddRemark" >
+        <action
+            android:id="@+id/action_fragmentAddRemark_to_fragmentRemarks"
+            app:destination="@id/fragmentRemarks" />
     </fragment>
 </navigation>

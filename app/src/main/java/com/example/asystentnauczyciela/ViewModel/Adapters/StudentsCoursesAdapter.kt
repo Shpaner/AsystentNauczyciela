@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.LiveData
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.asystentnauczyciela.Model.Entities.Course
 import com.example.asystentnauczyciela.Model.ValuesHolder
@@ -27,22 +28,21 @@ class StudentsCoursesAdapter (var studentsCoursesList: LiveData<MutableList<Cour
         var studentCourseIndex = holder.itemView.findViewById<TextView>(R.id.studentsCourseIndex)
         var studentsCourseName = holder.itemView.findViewById<TextView>(R.id.studentsCourseName)
         var delButton = holder.itemView.findViewById<Button>(R.id.deleteStudentsCourseBtn)
-//        var goToGradesBtn = holder.itemView.findViewById<Button>(R.id.goToStudentsGrades)
+        var goToGradesBtn = holder.itemView.findViewById<Button>(R.id.goToGradesBtn)
 
         studentCourseIndex.text = studentsCoursesList.value?.get(position)?.id.toString()
         studentsCourseName.text = studentsCoursesList.value?.get(position)?.name
 
-        delButton.setOnClickListener{
+        goToGradesBtn.setOnClickListener{
+            view -> view.findNavController().navigate(R.id.action_fragmentStudentsCourseList_to_fragmentStudentsCourseGrades)
             ValuesHolder.chosenStudentsCourseId = studentsCoursesList.value?.get(position)?.id ?: 0
-
-            deleteButtonClickListener.onDelBtnClick(position)
+            ValuesHolder.chosenCourseName = studentsCourseName.text.toString()
         }
 
-        // TODO przejscie do ocen
-//        goToGradesBtn.setOnClickListener {
-//            view -> view.findNavController().navigate(R.id.action_fragmentStudentsCourses_to_fragmentStudentsGrades)
-//            DataSource.chosenStudentsCourseId = studentCList.value?.get(position)?.id ?: 0
-//        }
+        delButton.setOnClickListener{
+            ValuesHolder.chosenStudentsCourseId = studentsCoursesList.value?.get(position)?.id ?: 0
+            deleteButtonClickListener.onDelBtnClick(position)
+        }
 
     }
 

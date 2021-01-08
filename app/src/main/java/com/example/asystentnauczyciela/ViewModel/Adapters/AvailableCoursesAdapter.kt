@@ -34,7 +34,6 @@ class AvailableCoursesAdapter (var availableCoursesList: LiveData<MutableList<Co
         availableCourseName.text = availableCoursesList.value?.get(position)?.name
 
         addButton.setOnClickListener{
-            //ValuesHolder.chosenParticipantId = availableCoursesList.value?.get(position)?.id ?: 0
             ValuesHolder.chosenStudentsCourseId = availableCoursesList.value?.get(position)?.id ?: 0
 
             addButtonClickListener.onAddBtnClick(position)

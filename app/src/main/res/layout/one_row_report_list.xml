@@ -6,34 +6,32 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/studentsCourseIndex"
+        android:id="@+id/indexr"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         />
 
     <TextView
-        android:id="@+id/studentsCourseName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="8"
-        />
-
-    <Button
-        android:id="@+id/goToGradesBtn"
+        android:id="@+id/gradeNamer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="6"
-        android:text="oceny"
-        android:textSize="8dp"
+        />
+
+    <TextView
+        android:id="@+id/gradeValuer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         />
 
     <Button
-        android:id="@+id/deleteStudentsCourseBtn"
+        android:id="@+id/goToEditGradeBtnr"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="6"
-        android:text="Usuń"
+        android:layout_weight="3"
+        android:text="Przejdź"
         android:textSize="8dp"
         />
 

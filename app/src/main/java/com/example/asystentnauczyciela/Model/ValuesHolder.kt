@@ -12,5 +12,9 @@ class ValuesHolder {
         var student: String = ""
         var chosenParticipantId: Int = 0
         var chosenTestIndex: Int = 0
+        var chosenGradeIndex: Int = 0
+        var chosenCourseName: String = ""
+        var date: String = ""
+        var chosenRemarkIndex: Int = 0
     }
 }
