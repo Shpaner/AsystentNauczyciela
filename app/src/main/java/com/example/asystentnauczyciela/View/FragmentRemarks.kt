@@ -63,7 +63,6 @@ class FragmentRemarks : Fragment(), DeleteButtonClickListener {
 
         studentNameOnRemark.text = ValuesHolder.student
 
-        //TODO
         goToAddRemarkButton.setOnClickListener {
                 view -> view.findNavController().navigate(R.id.action_fragmentRemarks_to_fragmentAddRemark)
         }

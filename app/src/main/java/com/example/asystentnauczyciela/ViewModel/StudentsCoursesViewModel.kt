@@ -18,7 +18,6 @@ class StudentsCoursesViewModel (application: Application): AndroidViewModel(appl
     var studentsCourses: LiveData<MutableList<Course>>
     var notStudentsCourses: LiveData<MutableList<Course>>
 
-//    private val courses: LiveData<MutableList<Course>>
     val courseRepository: CourseRepository
 
     init{
@@ -29,7 +28,6 @@ class StudentsCoursesViewModel (application: Application): AndroidViewModel(appl
         notStudentsCourses = MainDatabase.getDatabase(application).courseDao()
             .getNotStudentsCourses(ValuesHolder.chosenStudentId)
 
-//        courses = MainDatabase.getDatabase(application).courseDao().getAllCourses()
         courseRepository = CourseRepository(MainDatabase.getDatabase(application).courseDao())
     }
 

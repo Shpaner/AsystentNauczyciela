@@ -80,8 +80,5 @@ class FragmentAvailableCourses : Fragment(), AddButtonClickListener {
 
     override fun onAddBtnClick(position: Int) {
         viewModel.addStudentsCourse(ValuesHolder.chosenStudentId, ValuesHolder.chosenStudentsCourseId)
-
-//        Log.i("student", "${ValuesHolder.chosenStudentId}")
-//        Log.i("kurs", "${ValuesHolder.chosenStudentsCourseId}")
     }
 }

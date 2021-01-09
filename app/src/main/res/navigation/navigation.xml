@@ -163,6 +163,9 @@
         <action
             android:id="@+id/action_fragmentRemarks_to_fragmentAddRemark"
             app:destination="@id/fragmentAddRemark" />
+        <action
+            android:id="@+id/action_fragmentRemarks_to_fragmentRemarkView"
+            app:destination="@id/fragmentRemarkView" />
     </fragment>
     <fragment
         android:id="@+id/fragmentAddRemark"
@@ -170,6 +173,15 @@
         android:label="FragmentAddRemark" >
         <action
             android:id="@+id/action_fragmentAddRemark_to_fragmentRemarks"
+            app:destination="@id/fragmentRemarks" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRemarkView"
+        android:name="com.example.asystentnauczyciela.View.FragmentRemarkView"
+        android:label="fragment_remark_view"
+        tools:layout="@layout/fragment_remark_view" >
+        <action
+            android:id="@+id/action_fragmentRemarkView_to_fragmentRemarks"
             app:destination="@id/fragmentRemarks" />
     </fragment>
 </navigation>

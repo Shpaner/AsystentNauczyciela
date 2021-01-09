@@ -71,14 +71,8 @@ class FragmentAddGrade : Fragment(), AdapterView.OnItemSelectedListener {
 
 
             if("" != selectedMark) {
-//                Log.d("student", "${ValuesHolder.chosenStudentId}")
-//                Log.d("opis", "$description")
-//                Log.d("kurs", "${ValuesHolder.chosenStudentsCourseId}")
-//                Log.d("ocena", "$selectedMark")
-//                Log.d("data", "$date")
-//                Log.d("tytul", "$name")
                 Log.d("","dodano ocenę")
-                viewModel.addGrade(ValuesHolder.chosenStudentId, description, ValuesHolder.chosenStudentsCourseId, selectedMark, date, name)
+                viewModel.addGrade(ValuesHolder.chosenStudentId, description, ValuesHolder.chosenStudentsCourseId, selectedMark, date, name, ValuesHolder.student, ValuesHolder.chosenCourseName)
             }
         }
     }

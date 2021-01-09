@@ -43,9 +43,6 @@ class StudentListAdapter(var studentList: LiveData<MutableList<Student>>,
             view -> view.findNavController().navigate(R.id.action_fragmentStudentList_to_fragmentSelectedStudent)
             ValuesHolder.chosenStudentIndex = position
             ValuesHolder.chosenStudentId = studentList.value?.get(position)?.id ?: 0
-
-//            Log.d("student Index", "${ValuesHolder.chosenStudentIndex}")
-//            Log.d("student Id", "${ValuesHolder.chosenStudentId}")
         }
 
         delButton.setOnClickListener{

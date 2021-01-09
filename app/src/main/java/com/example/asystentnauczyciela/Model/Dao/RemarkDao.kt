@@ -2,6 +2,7 @@ package com.example.asystentnauczyciela.Model.Dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.asystentnauczyciela.Model.Entities.Grade
 import com.example.asystentnauczyciela.Model.Entities.Remark
 
 @Dao
@@ -14,4 +15,7 @@ interface RemarkDao {
 
     @Query("select * from remark_table where idStudent = :id")
     fun getStudentsRemarks(id: Int) : LiveData<MutableList<Remark>>
+
+    @Query("select * from remark_table")
+    suspend fun getRemarkList(): List<Remark>
 }

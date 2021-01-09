@@ -8,25 +8,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.asystentnauczyciela.Model.ValuesHolder
 import com.example.asystentnauczyciela.R
 import com.example.asystentnauczyciela.ViewModel.Adapters.GradesAdapter
+import com.example.asystentnauczyciela.ViewModel.Adapters.RemarkAdapter
 import com.example.asystentnauczyciela.ViewModel.DeleteButtonClickListener
 import com.example.asystentnauczyciela.ViewModel.GradeViewModel
+import com.example.asystentnauczyciela.ViewModel.RemarkViewModel
 import kotlinx.android.synthetic.main.fragment_grade_view.*
-import kotlin.math.log
+import kotlinx.android.synthetic.main.fragment_remark_view.*
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class FragmentGradeView : Fragment(), DeleteButtonClickListener {
+class FragmentRemarkView : Fragment(), DeleteButtonClickListener {
 
     private var param1: String? = null
     private var param2: String? = null
 
-    lateinit var viewModel: GradeViewModel
-    lateinit var myAdapter: GradesAdapter
+    lateinit var viewModel: RemarkViewModel
+    lateinit var myAdapter: RemarkAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,25 +43,20 @@ class FragmentGradeView : Fragment(), DeleteButtonClickListener {
     ): View? {
         // Inflate the layout for this fragment
 
-        viewModel = ViewModelProvider(requireActivity()).get(GradeViewModel::class.java)
-        myAdapter = GradesAdapter(viewModel.grades, this)
+        viewModel = ViewModelProvider(requireActivity()).get(RemarkViewModel::class.java)
+        myAdapter = RemarkAdapter(viewModel.studentsRemarks, this)
 
-        viewModel.grades.observe(viewLifecycleOwner, Observer { myAdapter.notifyDataSetChanged() })
-        return inflater.inflate(R.layout.fragment_grade_view, container, false)
+        viewModel.studentsRemarks.observe(viewLifecycleOwner, Observer { myAdapter.notifyDataSetChanged() })
+        return inflater.inflate(R.layout.fragment_remark_view, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        studentgName.text = viewModel.getGrade(ValuesHolder.chosenGradeIndex).studentName
-        coursegName.text = viewModel.getGrade(ValuesHolder.chosenGradeIndex).studentsCourseName
+        studentNameRV.text = ValuesHolder.student
 
-        // TODO
-        Log.d("name", "${viewModel.getGrade(ValuesHolder.chosenGradeIndex).gradeName}")
-
-        gradeName.text = viewModel.getGrade(ValuesHolder.chosenGradeIndex).gradeName
-        gradeValue.text = viewModel.getGrade(ValuesHolder.chosenGradeIndex).gradeValue
-        gradeDescription.text = viewModel.getGrade(ValuesHolder.chosenGradeIndex).gradeDescription
+        remarkTitle.text = viewModel.getRemark(ValuesHolder.chosenRemarkIndex).name
+        remarkDescriptionRV.text = viewModel.getRemark(ValuesHolder.chosenRemarkIndex).description
     }
 
     companion object {

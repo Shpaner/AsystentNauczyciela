@@ -85,9 +85,6 @@ class FragmentStudentsCoursesList : Fragment(), DeleteButtonClickListener {
     }
 
     override fun onDelBtnClick(position: Int) {
-        // TODO
-//        viewModel.studentsCourses.value?.get(ValuesHolder.chosenStudentsCourseId)?.let {
-//            viewModel.deleteStudentsCourse(it)
-//        }
+
     }
 }

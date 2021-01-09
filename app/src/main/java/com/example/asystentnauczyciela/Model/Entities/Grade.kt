@@ -25,5 +25,7 @@ data class Grade(
         val gradeName: String,
         var gradeValue: String,
         var gradeDescription: String,
-        var date: String) {
+        var date: String,
+        var studentName: String,
+        var studentsCourseName: String) {
 }

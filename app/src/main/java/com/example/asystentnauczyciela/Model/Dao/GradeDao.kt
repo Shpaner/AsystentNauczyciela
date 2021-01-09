@@ -24,6 +24,6 @@ interface GradeDao {
     @Query("select * from grade_table where date = :todaysDate")
     fun report(todaysDate: String) : LiveData<MutableList<Grade>>
 
-    @Query("select * from grade_table where id = :index")
-    fun getGrade(index: Int): Grade
+    @Query("select * from grade_table")
+    suspend fun getGradeList(): List<Grade>
 }

@@ -2,6 +2,7 @@ package com.example.asystentnauczyciela.Model.Repositories
 
 import androidx.lifecycle.LiveData
 import com.example.asystentnauczyciela.Model.Dao.RemarkDao
+import com.example.asystentnauczyciela.Model.Entities.Grade
 import com.example.asystentnauczyciela.Model.Entities.Remark
 
 class RemarkRepository(val remarkDao: RemarkDao) {
@@ -14,5 +15,9 @@ class RemarkRepository(val remarkDao: RemarkDao) {
 
     fun getStudentsRemarks(studentId: Int) : LiveData<MutableList<Remark>> {
         return remarkDao.getStudentsRemarks(studentId)
+    }
+
+    suspend fun getRemarkList() : List<Remark> {
+        return remarkDao.getRemarkList()
     }
 }

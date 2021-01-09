@@ -21,7 +21,4 @@ interface CourseDao {
 
     @Query("select * from course_table where id not in (select idCourse from students_course_table where students_course_table.idStudent = :studentId)")
     fun getNotStudentsCourses(studentId: Int) : LiveData<MutableList<Course>>
-
-//    @Query("select * from course_table where idTeacher = :id")
-//    fun teachersCourses(id: Int) : LiveData<MutableList<Course>>
 }

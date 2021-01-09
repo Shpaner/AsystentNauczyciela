@@ -38,8 +38,6 @@ class GradesAdapter(
         var editBtn = holder.itemView.findViewById<Button>(R.id.goToEditGradeBtn)
         var delButton = holder.itemView.findViewById<Button>(R.id.deleteGradeBtn)
 
-
-
         gradeIndex.text = gradesList.value?.get(position)?.id.toString()
         gradeName.text = gradesList.value?.get(position)?.gradeName
         gradeValue.text = gradesList.value?.get(position)?.gradeValue

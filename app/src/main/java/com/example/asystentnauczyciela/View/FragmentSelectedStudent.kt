@@ -40,8 +40,6 @@ class FragmentSelectedStudent : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity()).get(StudentViewModel::class.java)
 
-        // TODO dodac adapter i layout manager
-
         return inflater.inflate(R.layout.fragment_selected_student, container, false)
     }
 

@@ -22,7 +22,7 @@ class GradeRepository(val gradeDao: GradeDao) {
 
     suspend fun delete(grade: Grade) = gradeDao.delete(grade)
 
-    fun getGrade(index: Int) : Grade {
-        return gradeDao.getGrade(index)
+    suspend fun getGradeList() : List<Grade> {
+        return gradeDao.getGradeList()
     }
 }

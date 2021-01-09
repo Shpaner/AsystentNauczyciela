@@ -16,26 +16,11 @@ class CourseViewModel(application: Application): AndroidViewModel(application) {
     val courses: LiveData<MutableList<Course>>
     val courseRepository: CourseRepository
 
-//    var studentsCourses: LiveData<MutableList<Course>>
-//    var notStudentsCourses: LiveData<MutableList<Course>>
-    //    var teachersCourses: LiveData<MutableList<Course>>
-
     init{
         courses = MainDatabase.getDatabase(application).courseDao().getAllCourses()
         courseRepository = CourseRepository(MainDatabase.getDatabase(application).courseDao())
 
-//        studentsCourses = MainDatabase.getDatabase(application).courseDao().getStudentsCourses(ValuesHolder.chosenStudentId)
-//        notStudentsCourses = MainDatabase.getDatabase(application).courseDao().getNotStudentsCourses(ValuesHolder.chosenStudentId)
-        //        teachersCourses = AssistentDatabase.getDatabase(application).courseDao().teachersCourses(ValuesHolder.chosenTeacherId)
     }
-
-    // TODO dodac powiazanie z nauczycielami
-//    fun addCourse(name: String, teacherId: Int)
-//    {
-//        viewModelScope.launch {
-//            courseRepository.insert(Course(name = name, idTeacher = teacherId, id = 0))
-//        }
-//    }
 
     fun addCourse(name: String) {
         viewModelScope.launch {

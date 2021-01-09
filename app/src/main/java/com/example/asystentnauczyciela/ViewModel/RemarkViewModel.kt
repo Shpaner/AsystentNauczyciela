@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.asystentnauczyciela.Model.Entities.Grade
 import com.example.asystentnauczyciela.Model.Entities.Remark
 import com.example.asystentnauczyciela.Model.MainDatabase
 import com.example.asystentnauczyciela.Model.Repositories.RemarkRepository
@@ -12,14 +13,14 @@ import kotlinx.coroutines.launch
 
 class RemarkViewModel(application: Application): AndroidViewModel(application) {
 
-    //val students: LiveData<MutableList<Student>>
     val remarkRepository: RemarkRepository
     var studentsRemarks: LiveData<MutableList<Remark>>
+    var remarkList: List<Remark>
 
     init{
-        //students = AssistentDatabase.getDatabase(application).studentDao().allStudents()
         remarkRepository = RemarkRepository(MainDatabase.getDatabase(application).remarkDao())
         studentsRemarks = MainDatabase.getDatabase(application).remarkDao().getStudentsRemarks(ValuesHolder.chosenStudentId)
+        remarkList = listOf(Remark(999, 999, "tmp", "tmp"))
     }
 
     fun addRemark(description: String, idStudent: Int, name: String)
@@ -33,6 +34,21 @@ class RemarkViewModel(application: Application): AndroidViewModel(application) {
         viewModelScope.launch {
             remarkRepository.delete(remark)
         }
+    }
+
+    fun getRemark(index: Int): Remark {
+
+        viewModelScope.launch {
+            remarkList = remarkRepository.getRemarkList()
+        }
+
+        remarkList.forEach {
+
+            if (it.id == index) {
+                return it
+            }
+        }
+        return Remark(999, 999, "tmp", "tmp")
     }
 
 }

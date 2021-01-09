@@ -42,12 +42,11 @@ class RemarkAdapter(
         remarkName.text = remarksList.value?.get(position)?.name
 
         //TODO
-//        editBtn.setOnClickListener {
-//                view -> view.findNavController().navigate(R.id.action_fragmentStudentsCourseGrades_to_fragmentGradeView)
-//            ValuesHolder.chosenGradeIndex = gradesList.value?.get(position)?.id ?: 0
-//            Log.d("index", "${ValuesHolder.chosenGradeIndex}")
-//        }
-//
+        editBtn.setOnClickListener {
+                view -> view.findNavController().navigate(R.id.action_fragmentRemarks_to_fragmentRemarkView)
+            ValuesHolder.chosenRemarkIndex = remarksList.value?.get(position)?.id ?: 0
+        }
+
         delButton.setOnClickListener{
             ValuesHolder.chosenRemarkIndex = remarksList.value?.get(position)?.id ?: 0
             deleteButtonClickListener.onDelBtnClick(position)

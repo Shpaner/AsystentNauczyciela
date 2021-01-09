@@ -35,7 +35,6 @@ class ReportListAdapter (var gradesList: LiveData<MutableList<Grade>>
         gradeName.text = gradesList.value?.get(position)?.gradeName
         gradeValue.text = gradesList.value?.get(position)?.gradeValue
 
-        //TODO - przejscie do viewGrade
         editBtn.setOnClickListener {
                 view -> view.findNavController().navigate(R.id.action_fragmentReport_to_fragmentGradeView)
             ValuesHolder.chosenGradeIndex = gradesList.value?.get(position)?.id ?: 0
